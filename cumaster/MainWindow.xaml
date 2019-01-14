@@ -1,0 +1,130 @@
+﻿<Window x:Name="cumaster" x:Class="baha_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:baha_test"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        mc:Ignorable="d"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="{DynamicResource BackgroundColor}"
+        fw:AcrylicWindow.TintOpacity="0.95"
+        fw:AcrylicWindow.FallbackColor="{DynamicResource BackgroundColor}"
+        fw:AcrylicWindow.NoiseOpacity="0.01" Height="567" Width="800" MouseDown="Cumaster_MouseDown" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="433*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="1" Margin="0,6,0,0.8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="294*"/>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="39*"/>
+                <ColumnDefinition Width="22*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="urlBar" BorderBrush="{x:Null}" Background="{DynamicResource LightColor}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0,0,5.2,-0.6" Foreground="{DynamicResource TextColor}" />
+            <TextBox x:Name="floorBox" BorderBrush="{x:Null}" Background="{DynamicResource LightColor}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" TextAlignment="Center" Grid.Column="1" Foreground="{DynamicResource TextColor}" MouseUp="FloorBox_MouseUp"/>
+            <TextBox x:Name="roomID" BorderBrush="{x:Null}" Background="{DynamicResource LightColor}" Grid.Column="2" TextAlignment="Center" Margin="5.2,0,4.4,-0.6" Foreground="{DynamicResource TextColor}"/>
+            <Button x:Name="but" Click="But_Click" Padding="0" Background="{DynamicResource LoadButColor}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{DynamicResource TextColor}" />
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,8.2,0,-0.2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="431*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="183*"/>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="439*"/>
+                <ColumnDefinition Width="155*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="4" RenderTransformOrigin="0.5,0.5" Margin="12.8,5.4,0.4,0.2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="150*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="nameboardA" TextAlignment="Center" Background="{DynamicResource LightColor}" Foreground="{DynamicResource TextColor}" RenderTransformOrigin="0.5,0.5" Opacity="0.3" MouseDown="NameboardA_MouseDown"/>
+                <TextBlock x:Name="nameboardB" TextAlignment="Center" Background="{DynamicResource DarkColor}" Foreground="{DynamicResource TextColor}" Grid.Row="1" Opacity="0.3" MouseDown="NameboardB_MouseDown"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="butL" Click="ButL_Click" Content="&lt;" Background="{DynamicResource LightColor}" Foreground="{DynamicResource TextColor}" BorderBrush="{x:Null}" />
+                <Button x:Name="butR" Content="&gt;" Click="ButR_Click" Background="{DynamicResource LightColor}" Grid.Column="1" Foreground="{DynamicResource TextColor}" BorderBrush="{x:Null}"/>
+
+            </Grid>
+
+            <TextBox x:Name="cmd" Background="{DynamicResource LightColor}" BorderBrush="{x:Null}" Grid.Column="1" TextAlignment="Center" Foreground="{DynamicResource TextColor}"/>
+            <TextBox x:Name="admi" AcceptsReturn="True" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Margin="0,5.4,0.2,0.2" Background="{DynamicResource ResourceKey=LightColor}" Foreground="{DynamicResource TextColor}"/>
+            <TextBlock x:Name="announce" FontFamily="Adobe Caslon Pro Bold" FontSize="16" TextOptions.TextHintingMode="Animated" TextWrapping="Wrap" UseLayoutRounding="False" Grid.Column="3" Background="{DynamicResource DarkColor}" Foreground="{DynamicResource TextColor}" TextAlignment="Center" Opacity="0.4"/>
+            <TextBlock x:Name="LoadStateBox" Grid.Column="4" Text="123456" Background="{DynamicResource DarkColor}" Foreground="{DynamicResource TextColor}" TextAlignment="Center" Opacity="0.4" Margin="13,0,0,0"/>
+
+            <Grid x:Name="grid" Background="#FFD3BB7C" UseLayoutRounding="False" Grid.Row="1" Grid.Column="3" Margin="0,5.4,0,10" MouseWheel="Grid_MouseWheel">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="121*"/>
+                    <ColumnDefinition Width="34*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ThemeBut" Grid.Row="2" Grid.Column="4" Background="{DynamicResource LightColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource TextColor}" Click="ThemeBut_Click"/>
+            </Grid>
+            
+            <Button x:Name="admiBut" Click="admiBut_Click" Content="從文本棋步更新" Background="{DynamicResource TextLoadButColor}" Foreground="{DynamicResource TextColor}" Grid.Row="2" Grid.Column="1" BorderBrush="{x:Null}" />
+        </Grid>
+    </Grid>
+</Window>
